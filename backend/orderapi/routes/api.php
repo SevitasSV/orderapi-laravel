@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\CausalController;
+use App\Http\Controllers\OrderController;
+use App\Models\order;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -20,3 +22,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::apiResource('causal', CausalController::class);
+Route::apiResource('observation', ObservationController::class);
+Route::apiResource('order', OrderController::class);
+Route::get('order/add_activity/{order}/{activity}', [OrderController::class, 'add_activity'])->name('order.add_activity');
+Route::get('order/remove_activity/{order}/{activity}', [OrderController::class, 'add_activity'])->name('order.add_activity');
