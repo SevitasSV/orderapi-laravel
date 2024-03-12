@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Activity;
 use GuzzleHttp\Psr7\Response;
 use Illuminate\Http\Request;
+use Illuminate\Http\Response as HttpResponse;
 
 class ActivityController extends Controller
 {
@@ -102,7 +103,7 @@ class ActivityController extends Controller
             'message' => 'Registro actualizado exitosamente',
             'causal' => $activity
         ];
-        return response()->json($request, Response::HTTP_OK);
+        return response()->json($request, HttpResponse::HTTP_OK);
     }
 
     /**

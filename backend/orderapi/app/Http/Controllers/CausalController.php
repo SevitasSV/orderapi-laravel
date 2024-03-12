@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Causal;
 use Illuminate\Http\Client\Response;
 use Illuminate\Http\Request;
+use Illuminate\Http\Response as HttpResponse;
 use Illuminate\Validation\Validator;
 use PhpParser\Builder\Function_;
 
@@ -56,9 +57,9 @@ class CausalController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(Causal $causal)
     {
-        return response()->json($causal, Response::HTTP_OK);
+        return response()->json($causal, HttpResponse::HTTP_OK);
     }
 
     /**
