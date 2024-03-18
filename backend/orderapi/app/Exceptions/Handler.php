@@ -58,22 +58,7 @@ class Handler extends ExceptionHandler
         });
     }
 
-    public function render($request, Throwable $exception)
-    {
-        if($exception instanceof AuthorizationException)
-        {
-            return response()->json([
-                'message' => 'Acceso prohibido al recurso'
-            ], Response::HTTP_FORBIDDEN);
-        }
-
-        if($exception instanceof RouteNotFoundException)
-        {
-            return response()->json([
-                'message' => 'Debe iniciar sesion'
-            ], Response::HTTP_UNAUTHORIZED);
-        }
-
-        return parent::render($request, $exception);
-    }
+   
+    
+       
 }
